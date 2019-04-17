@@ -21,3 +21,7 @@ steps:
 - script: dir
   workingDirectory: $(Agent.BuildDirectory)
   displayName: List contents of a folder
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: $(mySecureFile)
