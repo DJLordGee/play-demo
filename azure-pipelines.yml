@@ -20,6 +20,19 @@ steps:
 
 - script: dir
   workingDirectory: $(Agent.BuildDirectory)
-  displayName: List contents of a folder
+  displayName: 'List contents of a folder'
+
+- task: Delay@1
+  inputs:
+    delayForMinutes: '1'
+
+- task: CmdLine@2
+  inputs:
+    script: dir
+    displayName: 'List directory contents again'
+
+- task: Delay@1
+  inputs:
+    delayForMinutes: '1'
 
 
